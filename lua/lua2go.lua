@@ -21,6 +21,7 @@ ffi.cdef[[
   typedef unsigned long long GoUint64;
   typedef GoInt64 GoInt;
   typedef GoUint64 GoUint;
+  typedef char GoBool;
   typedef float GoFloat32;
   typedef double GoFloat64;
   typedef __complex float GoComplex64;
@@ -95,6 +96,15 @@ lua2go.ToLuaString = function(str)
   else
     return ffi.string(str) -- assume char *
   end
+end
+
+-- convert Number to lua bool
+lua2go.ToGoBool = function(number)
+  if number then
+    return true
+  else
+    return false
+  end 
 end
 
 -- convert Number to Lua
