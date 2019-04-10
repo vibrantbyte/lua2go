@@ -99,7 +99,7 @@ lua2go.ToLuaString = function(str)
 end
 
 -- convert Number to lua bool
-lua2go.ToGoBool = function(number)
+lua2go.ToLuaBool = function(number)
   if number then
     return true
   else
